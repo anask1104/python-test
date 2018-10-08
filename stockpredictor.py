@@ -45,6 +45,7 @@ tcs_close=tcs_stock_data.Close.values
 
 def VolumeShock(volume):
     volume_shock_boolean = []
+    volume_shock_direction = []
     for i in range(1, len(volume)):
         rel_diff = (volume[i] - volume[i - 1]) / volume[i]
         volume_shock_boolean.append(1 if abs(rel_diff) * 100 > 10 else 0)
